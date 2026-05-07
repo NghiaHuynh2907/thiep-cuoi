@@ -606,8 +606,10 @@
 
     <!-- ====== EVENTS ====== -->
     <div class="sec" style="background:#fff8f9;">
+
+        <!-- Nhà Gái -->
         <div class="event-block">
-            <div class="event-block-title">TỚI DỰ TIỆC CƯỚI</div>
+            <div class="event-block-title">TIỆC CƯỚI NHÀ GÁI</div>
             <div class="time-card">
                 <div class="time-card-side">Thứ Hai</div>
                 <div class="time-card-divider"></div>
@@ -621,14 +623,36 @@
             </div>
             <div class="time-lunar">( Tức ngày 08 tháng 04 năm Bính Ngọ )</div>
             <div class="location-box">
-                <div class="location-box-title">TẠI: MINH AN</div>
-                <div class="location-box-addr">Nghĩa Lộ, Yên Bái</div>
-                <iframe class="map-iframe"
-                    src="https://maps.google.com/maps?q=Nghia+Lo,+Yen+Bai&output=embed"
-                    allowfullscreen loading="lazy"></iframe>
-                <a class="btn-direction" href="https://maps.google.com/maps?q=Nghia+Lo,+Yen+Bai" target="_blank">XEM CHỈ ĐƯỜNG</a>
+                <div class="location-box-title">TẠI: NHÀ GÁI</div>
+                <div class="location-box-addr">Địa chỉ sẽ cập nhật sớm</div>
             </div>
         </div>
+
+        <!-- Nhà Trai -->
+        <div class="event-block" style="margin-top:20px;">
+            <div class="event-block-title">TIỆC CƯỚI NHÀ TRAI</div>
+            <div class="time-card">
+                <div class="time-card-side">Chủ Nhật</div>
+                <div class="time-card-divider"></div>
+                <div class="time-card-center">
+                    <div class="time-hour">10 giờ 00'</div>
+                    <div class="time-day">31</div>
+                    <div class="time-month">Tháng 05</div>
+                </div>
+                <div class="time-card-divider"></div>
+                <div class="time-card-side">Năm 2026</div>
+            </div>
+            <div class="time-lunar">( Tức ngày 14 tháng 04 năm Bính Ngọ )</div>
+            <div class="location-box">
+                <div class="location-box-title">TẠI: NHÀ TRAI</div>
+                <div class="location-box-addr">Xem bản đồ bên dưới</div>
+                <iframe class="map-iframe"
+                    src="https://maps.google.com/maps?q=https://maps.app.goo.gl/57jAe8HJHVX7RHxA6&output=embed"
+                    allowfullscreen loading="lazy"></iframe>
+                <a class="btn-direction" href="https://maps.app.goo.gl/57jAe8HJHVX7RHxA6" target="_blank">XEM CHỈ ĐƯỜNG</a>
+            </div>
+        </div>
+
     </div>
 
     <!-- ====== CALENDAR ====== -->
@@ -683,8 +707,6 @@
                 <option value="no">Không tham dự</option>
             </select>
             <button class="btn-red" onclick="sendRSVP()">GỬI NGAY</button>
-            <a class="btn-red" href="https://zalo.me/" target="_blank">GỬI MỪNG CƯỚI NHÀ TRAI</a>
-            <a class="btn-red" href="https://zalo.me/" target="_blank">GỬI MỪNG CƯỚI NHÀ GÁI</a>
         </div>
         <div class="rsvp-msg" id="rsvp-msg"></div>
     </div>
@@ -714,13 +736,13 @@
     // Calendar - Tháng 5/2026, bắt đầu Thứ Sáu (ngày 1/5/2026 là Thứ Sáu)
     (function(){
         var days = document.getElementById('cal-days');
-        var start = 4; // 0=T2 ... 6=CN; 1/5/2026 là Thứ Sáu = index 4
+        var start = 4; // 1/5/2026 là Thứ Sáu = index 4 (T2=0)
         var total = 31;
-        var wedding = 25;
         var html = '';
         for(var i=0;i<start;i++) html += '<div class="cal-day empty"></div>';
         for(var d=1;d<=total;d++){
-            if(d===wedding) html += '<div class="cal-day wedding"><span>'+d+'</span></div>';
+            if(d===25) html += '<div class="cal-day wedding" title="Tiệc cưới Nhà Gái"><span>'+d+'</span></div>';
+            else if(d===31) html += '<div class="cal-day wedding" title="Tiệc cưới Nhà Trai"><span>'+d+'</span></div>';
             else html += '<div class="cal-day">'+d+'</div>';
         }
         days.innerHTML = html;
